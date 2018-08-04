@@ -4,23 +4,19 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
-import { PropertyComponent } from './property/property.component';
-import { PropertyListComponent } from './property/property-list/property-list.component';
-import { PropertyListItemComponent } from './property/property-list-item/property-list-item.component';
+import { PropertyModule } from './property/property.module';
 
 const routes = [
-  { path: '', component: PropertyComponent }
+  { path: '', redirectTo: '/properties', pathMatch: 'full' }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    PropertyComponent,
-    PropertyListComponent,
-    PropertyListItemComponent
+    HeaderComponent
   ],
   imports: [
+    PropertyModule,
     RouterModule.forRoot(routes),
     BrowserModule
   ],
