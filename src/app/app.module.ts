@@ -1,10 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
+import { PropertyModule } from './property/property.module';
 
+const routes = [
+  { path: '', redirectTo: '/properties', pathMatch: 'full' }
+];
 
 @NgModule({
   declarations: [
@@ -12,6 +16,8 @@ import { HeaderComponent } from './common/header/header.component';
     HeaderComponent
   ],
   imports: [
+    PropertyModule,
+    RouterModule.forRoot(routes),
     BrowserModule
   ],
   providers: [],
