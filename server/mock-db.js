@@ -41,6 +41,19 @@ class MockDb {
             description: "Very nice apartment in center of the city.",
             dailyRate: 23,
             monthlyRate: 230
+        },
+        {
+            title: "Nice office downtown.",
+            city: "Athens",
+            street: "Mesogeion 304",
+            category: "office",
+            image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+            bedrooms: 5,
+            bathrooms: 2,
+            shared: true,
+            description: "Very nice apartment in center of the city.",
+            dailyRate: 230,
+            monthlyRate: 2300
         }]
     }
 

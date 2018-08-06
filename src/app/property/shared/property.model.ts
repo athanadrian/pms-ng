@@ -1,5 +1,5 @@
 export class Property {
-    id: string;
+    _id: string;
     title: string;
     city: string;
     street: string;
@@ -7,6 +7,7 @@ export class Property {
     category: string;
     image: string;
     bedrooms: number;
+    bathrooms: number;
     description: string;
     dailyRate: number;
     monthlyRate: number;

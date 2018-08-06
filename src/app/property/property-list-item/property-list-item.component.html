@@ -1,8 +1,8 @@
-<a routerLink="{{ property.id }}" class="card-link">
+<a routerLink="{{ property._id }}" class="card-link">
   <div class="card pms-card">
-    <img src="http://via.placeholder.com/350x250" alt="" class="card-img-top">
+    <img src="{{property.image}}" alt="" class="card-img-top">
     <div class="card-block">
-      <h6 class="card-subtitle">Whole appartment - {{ property.city }} </h6>
+      <h6 class="card-subtitle {{ property.category }}">{{ property.category }} - {{ property.city }} </h6>
       <h4 class="card-title">{{ property.title }}</h4>
       <p class="card-text">{{ property.dailyRate | currency }} per Night. Free cancelattion</p>
       More info
