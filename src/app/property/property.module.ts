@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { NgPipesModule } from 'ngx-pipes';
 
 import { PropertyComponent } from './property.component';
 import { PropertyListComponent } from './property-list/property-list.component';
@@ -29,7 +31,9 @@ const routes = [
     ],
     imports: [
         RouterModule.forRoot(routes),
-        CommonModule
+        CommonModule,
+        HttpClientModule,
+        NgPipesModule
     ],
     exports: [
     ],
