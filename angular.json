@@ -131,7 +131,8 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "pms",
-      "styleext": "scss"
+      "styleext": "scss",
+      "spec": false
     },
     "@schematics/angular:directive": {
       "prefix": "pms"
