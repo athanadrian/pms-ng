@@ -54,6 +54,19 @@ class MockDb {
             description: "Very nice apartment in center of the city.",
             dailyRate: 230,
             monthlyRate: 2300
+        },
+        {
+            title: "Nice apartment in chios harbor.",
+            city: "Chios",
+            street: "Livanou 27",
+            category: "apartment",
+            image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+            bedrooms: 1,
+            bathrooms: 1,
+            shared: true,
+            description: "Very nice apartment in center of the city.",
+            dailyRate: 20,
+            monthlyRate: 200
         }]
     }
 
