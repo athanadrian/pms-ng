@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
 import { PropertyModule } from './property/property.module';
 
+
 const routes = [
   { path: '', redirectTo: '/properties', pathMatch: 'full' }
 ];
@@ -13,7 +14,7 @@ const routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     PropertyModule,

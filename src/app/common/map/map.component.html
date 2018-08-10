@@ -1,0 +1,21 @@
+<agm-map
+  (mapReady)="onMapReady($event)" 
+  [latitude]="lat" 
+  [longitude]="lng"
+  [zoom]="13"
+  >
+  <agm-circle *ngIf="!hasPositionError && lat && lng"
+    [latitude]="lat" 
+    [longitude]="lng"
+    [radius]="800"
+    [fillColor]="'#F44336'"
+    [fillOpacity]="0.4"></agm-circle>
+
+  <agm-info-window *ngIf="hasPositionError"
+    [latitude]="0" 
+    [longitude]="0"
+    [isOpen]="true"
+    >
+    there was a problem dislaying your location....! 
+  </agm-info-window>
+</agm-map>

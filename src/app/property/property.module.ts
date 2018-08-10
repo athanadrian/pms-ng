@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NgPipesModule } from 'ngx-pipes';
 
+import { MapModule } from '../common/map/map.module';
+
 import { PropertyComponent } from './property.component';
 import { PropertyListComponent } from './property-list/property-list.component';
 import { PropertyListItemComponent } from './property-list-item/property-list-item.component';
@@ -33,7 +35,8 @@ const routes = [
         RouterModule.forRoot(routes),
         CommonModule,
         HttpClientModule,
-        NgPipesModule
+        NgPipesModule,
+        MapModule
     ],
     exports: [
     ],

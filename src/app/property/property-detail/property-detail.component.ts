@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 
-import { PropertyService } from './../shared/property.service';
+import { PropertyService } from '../shared/property.service';
 
 import { Property } from '../shared/property.model';
 
