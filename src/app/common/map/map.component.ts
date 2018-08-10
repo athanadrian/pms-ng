@@ -29,20 +29,6 @@ export class MapComponent implements OnInit, OnDestroy {
   }
 
   getLocation(location) {
-    let currentLocation = location;
-    if (Math.round(Math.random() * 10) > 5) {
-      currentLocation = '9946288290020';
-    }
-    this.mapService.getGeoLocation(location).subscribe(
-      (coordinates) => {
-        this.lat = coordinates.lat;
-        this.lng = coordinates.lng;
-        this.ref.detectChanges();
-      });
-  }
-
-  onMapReady() {
-    //this.getLocation(this.location);
     let currentLocation = this.location;
     let value = Math.round(Math.random() * 10);
     console.log('value ', value);
@@ -56,6 +42,10 @@ export class MapComponent implements OnInit, OnDestroy {
       }, () => {
         this.hasPositionError = true;
       });
+  }
+
+  onMapReady() {
+    this.getLocation(this.location);
   }
 
   ngOnDestroy() {
