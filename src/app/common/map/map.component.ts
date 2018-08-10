@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { MapService } from './map.service';
 import { Subject } from 'rxjs';
 
@@ -16,7 +16,9 @@ export class MapComponent implements OnInit, OnDestroy {
   lng: number;
   @Input() locationSubject: Subject<any>;
 
-  constructor(private mapService: MapService) { }
+  constructor(
+    private mapService: MapService,
+    private ref: ChangeDetectorRef) { }
 
   ngOnInit() {
     if (this.locationSubject) {
@@ -35,6 +37,7 @@ export class MapComponent implements OnInit, OnDestroy {
       (coordinates) => {
         this.lat = coordinates.lat;
         this.lng = coordinates.lng;
+        this.ref.detectChanges();
       });
   }
 

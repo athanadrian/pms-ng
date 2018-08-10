@@ -8,7 +8,7 @@
     [latitude]="lat" 
     [longitude]="lng"
     [radius]="800"
-    [fillColor]="' #F44336'"
+    [fillColor]="'#F44336'"
     [fillOpacity]="0.4"></agm-circle>
 
   <agm-info-window *ngIf="hasPositionError"
@@ -19,5 +19,3 @@
     there was a problem dislaying your location....! 
   </agm-info-window>
 </agm-map>
-
-{{ location }}
