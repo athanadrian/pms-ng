@@ -39,8 +39,10 @@ export class MapComponent implements OnInit, OnDestroy {
       (coordinates) => {
         this.lat = coordinates.lat;
         this.lng = coordinates.lng;
+        this.ref.detectChanges();
       }, () => {
         this.hasPositionError = true;
+        this.ref.detectChanges();
       });
   }
 
