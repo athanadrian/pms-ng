@@ -22,6 +22,7 @@ export class PropertyListComponent implements OnInit {
 
     propertiesObservable.subscribe((data: Property[]) => {
       this.properties = data;
+      console.log('properties: ', this.properties);
     })
   }
 

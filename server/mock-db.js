@@ -1,4 +1,5 @@
 const Property = require('./models/property');
+const User = require('./models/user');
 
 class MockDb {
 
@@ -9,6 +10,9 @@ class MockDb {
             street: "Main street",
             category: "condo",
             image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+            floor: "0",
+            depNo: "12",
+            code: "c012",
             bedrooms: 4,
             bathrooms: 2,
             shared: true,
@@ -22,6 +26,9 @@ class MockDb {
             street: "Time Square",
             category: "apartment",
             image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+            floor: "2",
+            depNo: "8",
+            code: "a28",
             bedrooms: 1,
             bathrooms: 1,
             shared: false,
@@ -35,6 +42,9 @@ class MockDb {
             street: "Banicka 1",
             category: "house",
             image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+            floor: "",
+            depNo: "",
+            code: "h",
             bedrooms: 5,
             bathrooms: 2,
             shared: true,
@@ -48,6 +58,9 @@ class MockDb {
             street: "Mesogeion 304",
             category: "office",
             image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+            floor: "2",
+            depNo: "9",
+            code: "o28",
             bedrooms: 5,
             bathrooms: 2,
             shared: true,
@@ -61,29 +74,43 @@ class MockDb {
             street: "Livanou 27",
             category: "apartment",
             image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+            floor: "3",
+            depNo: "1",
+            code: "a31",
             bedrooms: 1,
             bathrooms: 1,
             shared: true,
             description: "Very nice apartment in center of the city.",
             dailyRate: 20,
             monthlyRate: 200
-        }]
+        }],
+            this.users = [{
+                username: 'Test user',
+                email: 'test@gmail.com',
+                password: 'testtest'
+            }]
     }
 
-    pushPropertiesToDb() {
+    pushDataToDb() {
+        const user = new User(this.users[0]);
+
         this.properties.forEach((property) => {
             const newProperty = new Property(property);
+            newProperty.user = user;
+            user.properties.push(newProperty);
             newProperty.save();
         });
+        user.save();
     }
 
-   async cleanDb() {
-       await Property.remove({});
+    async cleanDb() {
+        await User.remove({});
+        await Property.remove({});
     }
 
-    seedDb() {
-        this.cleanDb();
-        this.pushPropertiesToDb();
+    async seedDb() {
+        await this.cleanDb();
+        await this.pushDataToDb();
     }
 }
 
