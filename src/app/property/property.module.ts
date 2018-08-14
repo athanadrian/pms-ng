@@ -32,7 +32,7 @@ const routes = [
         PropertyDetailComponent
     ],
     imports: [
-        RouterModule.forRoot(routes),
+        RouterModule.forChild(routes),
         CommonModule,
         HttpClientModule,
         NgPipesModule,
