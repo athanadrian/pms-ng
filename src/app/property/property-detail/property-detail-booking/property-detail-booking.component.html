@@ -1,0 +1,27 @@
+<div class="booking">
+  <div class="booking-price">
+    <span *ngIf="dailyPrice">{{ dailyPrice | currency:'EUR' }} <span class="booking-per-night"> / night</span></span>
+    <span *ngIf="!dailyPrice">NA <span class="booking-per-night"> / night</span></span>
+    <span>{{ monthlyPrice | currency:'EUR'}}</span><span class="booking-per-month"> / month</span>
+  </div>
+  <hr>
+  <label>Dates</label>
+    <input 
+    type="text" 
+    class="form-control daterangepicker-input" 
+    name="daterangeInput" 
+    daterangepicker 
+    [options]="options" 
+    (selected)="selectedDate($event, daterange)"
+     />
+  <div class="form-group">
+    <label for="guests">Guests</label>
+    <input type="number" class="form-control" id="guests" aria-describedby="emailHelp" placeholder="">
+  </div>
+  <button class="btn btn-danger btn-confirm btn-block">Reserve place now</button>
+  <hr>
+  <p class="booking-note-title">People are interested into this house</p>
+  <p class="booking-note-text">
+    More than 500 people checked this property in last month.
+  </p>
+</div>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NgPipesModule } from 'ngx-pipes';
+import { Daterangepicker } from 'ng2-daterangepicker';
 
 import { MapModule } from '../common/map/map.module';
 
@@ -11,15 +12,16 @@ import { PropertyListComponent } from './property-list/property-list.component';
 import { PropertyListItemComponent } from './property-list-item/property-list-item.component';
 import { PropertyDetailComponent } from './property-detail/property-detail.component';
 
-
 import { PropertyService } from './shared/property.service';
+import { AuthGuard } from './../auth/shared/auth.guard';
+import { PropertyDetailBookingComponent } from './property-detail/property-detail-booking/property-detail-booking.component';
 
 const routes = [
     {
         path: 'properties', component: PropertyComponent,
         children: [
             { path: '', component: PropertyListComponent },
-            { path: ':propertyId', component: PropertyDetailComponent }
+            { path: ':propertyId', component: PropertyDetailComponent, canActivate: [AuthGuard] }
         ]
     }
 ];
@@ -29,19 +31,22 @@ const routes = [
         PropertyComponent,
         PropertyListComponent,
         PropertyListItemComponent,
-        PropertyDetailComponent
+        PropertyDetailComponent,
+        PropertyDetailBookingComponent
     ],
     imports: [
         RouterModule.forChild(routes),
         CommonModule,
         HttpClientModule,
         NgPipesModule,
-        MapModule
+        MapModule,
+        Daterangepicker
     ],
     exports: [
     ],
     providers: [
-        PropertyService
+        PropertyService,
+        AuthGuard
     ]
 })
 

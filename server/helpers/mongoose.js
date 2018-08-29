@@ -4,7 +4,7 @@ module.exports = {
 
         for (let property in errors) {
             if (errors.hasOwnProperty(property)) {
-                normaliseErrors.push({ title: property, detail: errors[property].message })
+                normaliseErrors.push({ title: property, message: errors[property].message })
             }
         }
         return normaliseErrors;

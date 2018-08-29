@@ -24,7 +24,18 @@
       font-size: 14px;
     }
   
-  
+    .profile-img {
+      margin-top: 5px;
+      color:#007bff;
+    }
+
+    .clickable {
+      cursor: pointer;
+    }
+
+    .logout{
+      color: $main-color !important;
+    }
     .btn-pms-search {
       border-color: $main-color;
       color: $main-color;
