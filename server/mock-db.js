@@ -65,7 +65,7 @@ class MockDb {
             bathrooms: 2,
             shared: true,
             description: "Very nice apartment in center of the city.",
-            dailyRate: 230,
+            dailyRate: null,
             monthlyRate: 2300
         },
         {

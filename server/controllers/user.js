@@ -38,7 +38,7 @@ exports.auth = function (req, res) {
     const { email, password } = req.body;
 
     if (!password || !email) {
-        return res.status(422).send({ errors: [{ title: 'Data missing!', detail: 'Provide email and password!' }] });
+        return res.status(422).send({ errors: [{ title: 'Data missing!', message: 'Provide email and password!' }] });
     }
 
     User.findOne({ email }, function (err, user) {
@@ -47,7 +47,7 @@ exports.auth = function (req, res) {
         }
 
         if (!user) {
-            return res.status(422).send({ errors: [{ title: 'Invalid User!', detail: 'User does not exist' }] });
+            return res.status(422).send({ errors: [{ title: 'Invalid User!', message: 'User does not exist' }] });
         }
 
         if (user.hasSamePassword(password)) {
@@ -58,7 +58,7 @@ exports.auth = function (req, res) {
 
             return res.json(token);
         } else {
-            return res.status(422).send({ errors: [{ title: 'Wrong Data!', detail: 'Wrong email or password' }] });
+            return res.status(422).send({ errors: [{ title: 'Wrong Data!', message: 'Wrong email or password' }] });
         }
     });
 }
@@ -134,6 +134,6 @@ function parseToken(token) {
 }
 
 function unAuthorized(res) {
-    return res.status(401).send({ errors: [{ title: 'Unauthorized!', detail: 'Yoy must login to have access.' }] });
+    return res.status(401).send({ errors: [{ title: 'Unauthorized!', message: 'Yoy must login to have access.' }] });
 }
 

@@ -1,0 +1,74 @@
+@import "variables";
+
+.pms-form {
+  color: $main-text-color;
+
+  .error {
+    color: #a94442;
+    background: #f2dede;
+    border: 1px solid #e4b3b3;
+    border-radius: 2px;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 10px 0 0;
+  }  
+
+  form {
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  .form-text {
+    font-size: 13px;
+  }
+
+  .image-container {
+    position: relative;
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+
+  .alert {
+    p {
+      margin: 0;
+    }
+  }
+
+  .btn-pms {
+    background-color: $main-color;
+    border-color: $main-color;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 20px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: $main-color !important;
+      background-color: $main-color !important;
+    }
+  }
+  .catchphrase {
+    text-align: center;
+    font-size: 42px;
+    position: absolute;
+    color: #f1f1f1;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+    letter-spacing: 1px;
+  }
+}

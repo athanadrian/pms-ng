@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 
-import { Property } from './property.model';
-
 
 @Injectable()
 export class PropertyService {

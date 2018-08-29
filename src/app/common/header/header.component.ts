@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
+import { AuthService } from "../../auth/shared/auth.service";
 
 @Component({
-  selector: 'pms-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: "pms-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  constructor(
+    public auth: AuthService, 
+    private router: Router) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  logout() {
+    this.auth.logout();
+    this.router.navigate(["/login"]);
   }
-
 }
